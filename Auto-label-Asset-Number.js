@@ -1,4 +1,4 @@
-<script> // This automatically labels img-label-number
+// This automatically labels img-label-number
 document.addEventListener("DOMContentLoaded", function () {
     let sections = document.querySelectorAll("section"); // Find all sections
     let sectionIndex = null; // Initialize as null so we can detect the first valid section
@@ -24,4 +24,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-</script>  
