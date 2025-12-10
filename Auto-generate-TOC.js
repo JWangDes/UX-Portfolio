@@ -5,6 +5,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!tocContainer || headers.length === 0) return; // Exit if no TOC or <h2> found
 
+    /* ===============================
+       FIX: Force no bullets & no spacing
+       (prevents timing/layout conflicts)
+    =============================== */
+    const tocStyle = document.createElement("style");
+    tocStyle.textContent = `
+        [data-toc] .toc-list,
+        [data-toc] .toc-list li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    `;
+    document.head.appendChild(tocStyle);
+
     const tocList = document.createElement("ul");
     tocList.classList.add("toc-list"); // Assigns the 'toc-list' class
 
